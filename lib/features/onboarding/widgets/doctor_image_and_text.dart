@@ -7,13 +7,16 @@ class DoctorImageAndText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    
     return Stack(
       children: [
         SvgPicture.asset("assets/svgs/doc_doc_logo.svg"),
+         
         Container(
           foregroundDecoration: BoxDecoration(
             gradient: LinearGradient(
-              colors: [Colors.white, Colors.white.withOpacity(0.0)],
+              colors: [
+                 Colors.white,Colors.white.withAlpha((0.3 * 255).round())],
               begin: Alignment.bottomCenter,
               end: Alignment.topCenter,
               stops: const [0.14, 0.4],

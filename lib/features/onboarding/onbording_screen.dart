@@ -1,10 +1,11 @@
+import 'package:doc_doc/core/helper/extensions.dart';
+import 'package:doc_doc/core/routing/routes.dart';
 import 'package:doc_doc/core/theming/styles.dart';
+import 'package:doc_doc/core/widgets/app_text_button.dart';
 import 'package:doc_doc/features/onboarding/widgets/doctor_image_and_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import 'widgets/doc_logo_and_name.dart';
-import 'widgets/get_started_button.dart';
 
 class OnbordingScreen extends StatelessWidget {
   const OnbordingScreen({super.key});
@@ -30,7 +31,18 @@ class OnbordingScreen extends StatelessWidget {
                   textAlign: TextAlign.center,
                   ),
                   SizedBox(height: 30.h,),
-                const  GetStartedButton(),
+                 AppTextButton(
+                  buttonText:"Get Started",
+                  textStyle: TextStyles.font16whiteMedium,
+                  onPressed: () {
+                 context.pushNamed(Routes.loginScreen);
+                //  Navigator.of(context).push(
+                //   MaterialPageRoute(
+                //     builder: (context) => const SignInScreen(),
+                //   ),
+                // );
+                  },
+                ),
                 ],
                ),
              )
